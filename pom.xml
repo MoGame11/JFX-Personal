@@ -64,7 +64,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>at.mogame11.javafxselfmade/at.mogame11.javafxselfmade.HelloApplication
+                            <mainClass>at.mogame11.javafxselfmade/at.mogame11.javafxselfmade.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
