@@ -50,13 +50,14 @@ public class LogInController {
         System.out.println("Log In Action");
         String userName = usernameTextField.getText();
         String password = passwordField.getText();
-        System.out.println("Username: " + userName);
-        System.out.println("Passwort: " + password);
+        //System.out.println("Username: " + userName);
+        //System.out.println("Passwort: " + password);
         if (isUserDataCorrect(userName, password)) {
             changeSceneToAdmin();
             System.out.println("Success");
         } else {
             //errorLabel.setText("Wrong Log-In Data");
+            System.out.println("Wrong Log-In Data");
         }
     }
 
