@@ -42,23 +42,23 @@ public class LogInController {
     @FXML
     void cancelAction(ActionEvent event) {
         changeSceneToCustomer();
-        System.out.println("Cancel Action");
+        //System.out.println("Cancel Action");
     }
 
     @FXML
     void logInAction(ActionEvent event) {
-        System.out.println("Log In Action");
+        //System.out.println("Log In Action");
         String userName = usernameTextField.getText();
         String password = passwordField.getText();
         //System.out.println("Username: " + userName);
         //System.out.println("Passwort: " + password);
         if (isUserDataCorrect(userName, password)) {
             changeSceneToAdmin();
-            System.out.println("Success");
-        } else {
+            //System.out.println("Success");
+        } /*else {
             //errorLabel.setText("Wrong Log-In Data");
-            System.out.println("Wrong Log-In Data");
-        }
+            //System.out.println("Wrong Log-In Data");
+        }*/
     }
 
     private boolean isUserDataCorrect(String userName, String userPassword) {
@@ -70,7 +70,7 @@ public class LogInController {
             Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("AdminView.fxml"))));
 
             Stage window = (Stage) logInButton.getScene().getWindow();
-            window.setScene(new Scene(root, 720,480));
+            window.setScene(new Scene(root, 720, 480));
         } catch (IOException iox) {
             System.err.println("Exception: " + iox);
         }
@@ -81,7 +81,7 @@ public class LogInController {
             Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("CustomerView.fxml"))));
 
             Stage window = (Stage) cancelButton.getScene().getWindow();
-            window.setScene(new Scene(root, 720,480));
+            window.setScene(new Scene(root, 720, 480));
         } catch (IOException iox) {
             System.err.println("Exception: " + iox);
         }
