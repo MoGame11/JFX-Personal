@@ -16,7 +16,7 @@ public class FileHandler {
 
     }
 
-    public boolean isCorrectInput(String userName, String userPassword) {
+    boolean isCorrectInput(String userName, String userPassword) {
         ArrayList<FileHandler> returner = new ArrayList<>();
         StringBuilder wholeFile = new StringBuilder("");
         try {
@@ -41,7 +41,7 @@ public class FileHandler {
         }
         for (FileHandler fileHandler : returner) {
             if (Objects.equals(userName, fileHandler.userName)) {
-                if (Objects.equals(userPassword, fileHandler.password)) {
+                if (Objects.equals(userPassword.hashCode(), Integer.parseInt(fileHandler.password))) {
                     return true;
                 }
             }
