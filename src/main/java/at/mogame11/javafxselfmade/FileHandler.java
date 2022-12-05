@@ -1,5 +1,6 @@
 package at.mogame11.javafxselfmade;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,9 +12,31 @@ public class FileHandler {
     private String userName;
     private String password;
     private static final Path PATH = Paths.get("src/main/resources/at/mogame11/javafxselfmade/userData.csv");
+    private static final String HEADER_FOR_FILE = "UserName;firstName;name;password";
 
     public FileHandler() {
+    }
 
+    public static void init() {
+        try {
+            if (Files.notExists(PATH)){
+                FileWriter fw = new FileWriter(PATH.toFile());
+                fw.write(HEADER_FOR_FILE);
+                fw.close();
+            }
+        }catch (IOException iox){
+            System.err.println("Exception: "+iox);
+        }
+    }
+    public static void writeFile(String userName, String password){
+        int passHash = password.hashCode();
+        String log = (userName+passHash);
+        try {
+            FileWriter fw = new FileWriter(PATH.toFile(), true);
+            fw.write(log);
+            fw.close();
+        } catch (IOException ignored) {
+        }
     }
 
     boolean isCorrectInput(String userName, String userPassword) {

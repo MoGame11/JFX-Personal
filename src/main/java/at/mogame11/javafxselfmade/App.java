@@ -14,6 +14,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("LogInView.fxml"))));
         //new LogInController();
+        FileHandler.init();
         primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root, 720,480));
         primaryStage.show();
